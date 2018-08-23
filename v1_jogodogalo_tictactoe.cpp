@@ -16,9 +16,6 @@ void iniciar_matrix()
 {   
     
     int n,m;
-   
-   
-
     
     cout <<"BEM-VINDO!"<<endl;
 
@@ -57,7 +54,6 @@ void imprimir()
     }
     cout <<"*********************************************"<<endl;
 }
-
 
 
 int jogador_j(int p)
@@ -141,10 +137,6 @@ int jogador_j(int p)
      cout <<"!!!!POSICAO OCUPADA!!!"<<endl;  
      cout <<"INTRODUZA UMA OUTRA POSICAO"<<endl;
      return 0;
-    
-     
-
-     
     }
     else
     {
@@ -153,7 +145,6 @@ int jogador_j(int p)
     }
      imprimir();
     return 1;
-
 
  }
     
@@ -182,15 +173,10 @@ void pc_j()
 
     } while(mat2.table[x][y] != "  ");
    
-
-   
     
         cout <<"VEZ DO PC"<<endl;
         mat2.table[x][y]=":(";
-    
-
-
-    imprimir();
+        imprimir();
 }
 
 
@@ -340,12 +326,6 @@ int main()
     string pos;
     int p=0,t=0;
     
-    
-    
-    
-    
-      
-       
         iniciar_matrix();
         cout <<"*********************************************"<<endl;
         
