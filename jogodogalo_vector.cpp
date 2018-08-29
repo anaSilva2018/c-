@@ -12,7 +12,7 @@ struct matrix{
 
     vector<vector<string> >v;
 }v1;
-
+//iniciar a matrix/tabuleiro com dxd posições
 void matrix_inicial(int d)
 {
 
@@ -42,15 +42,16 @@ void matrix_inicial(int d)
 
 
 }
-
+//imprimir a matrix/tabuleiro com os valores guardados
 void imprimir(int d)
 {
      int i=0,j=0;
   
-
+    // d colunas
     v1.v.resize(d);
     for(i=0; i<d; i++)
     {
+        //d linhas para cada coluna
        v1.v[i].resize(d);
 
         for (j=0; j<d; j++)
@@ -75,7 +76,7 @@ void imprimir(int d)
 int jogador_j(int d, int p)
 {
     int i=0,j=0;
-
+//se a posicao for valida verifica se a jogada é valida
   if(p< (d*d)+1)
   {
        for(i=0; i<d; i++)
@@ -83,7 +84,7 @@ int jogador_j(int d, int p)
         for(j=0; j<d; j++)
         {
             if(((i*d)+j+1)==p)
-            {
+            {   //verifica se a posicao está desocupada
                 if(v1.v[i][j]=="  ")
                 {
                      cout <<"VEZ DO JOGADOR"<<endl;
@@ -112,7 +113,7 @@ int jogador_j(int d, int p)
   
 
 }
-
+//valores aleatorios para a posicao x
 void pc_j(int d)
 {
     int i=0,j=0, k=0, m=0;
@@ -131,7 +132,7 @@ void pc_j(int d)
 
 
 
-
+// verifica a vitoria na diagonal principal
 int dig_p1(int d,string mark)
 { 
     
@@ -141,19 +142,18 @@ int dig_p1(int d,string mark)
     
     if(v1.v[d-1][d-1]==mark)
     {
-       // cout << "inicio p1:"<<dig_p1<< endl;
-        //dig_p1++;
+       
        
         while(i>-1 && j >-1)
         {
             if(v1.v[i][j]==mark)
             {
                 dig_p1++;
-              //  cout<<"meio p1:"<<dig_p1<<i<<j<<endl;
+            
 
                 if(dig_p1==d)
                 {
-                    //cout <<"win p1"<<dig_p1<<endl;
+                   
                     return 1;
                 }
             }
@@ -167,7 +167,7 @@ int dig_p1(int d,string mark)
         return 0;
     }
 }
-
+//verifica a vitoria na outra diagonal
 int dig_e1(int d,string mark)
 { 
     
@@ -177,7 +177,7 @@ int dig_e1(int d,string mark)
     
     if(v1.v[d-1][0]==mark)
     {
-        //cout << "inicio p1:"<<dig_e1<< endl;
+       
         
        
         while(i>-1 && j <d)
@@ -185,11 +185,11 @@ int dig_e1(int d,string mark)
             if(v1.v[i][j]==mark)
             {
                 dig_e1++;
-               // cout<<"meio p1:"<<dig_e1<<i<<j<<endl;
+               
 
                 if(dig_e1==d)
                 {
-                    //cout <<"win p1"<<dig_e1<<endl;
+                    
                     return 1;
                 }
             }
@@ -203,7 +203,7 @@ int dig_e1(int d,string mark)
         return 0;
     }
 }
-
+//vitoria nas linhas
 int linhas(int d, string mark)
 {
     int j=0,i=0,lit=0;
@@ -232,7 +232,7 @@ int linhas(int d, string mark)
         }
     }
 }
-
+//vitoria nas colunas
 int coluna(int d,string mark )
 {
     int colt=0, i=0,j=0;
