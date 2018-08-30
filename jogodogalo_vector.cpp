@@ -311,74 +311,103 @@ int derrota(int d)
 }
 int main()
 {
-    int dim=0,p=0,pos2=0,t=0;
+    int dim=0,p=0,pos2=0,t=0, error=0,end_m=0;
     string pos,d;
+    loopd:
     cout << "INDIQUE A DIMENSAO DO TABULEIRO(3X3->D=3):";
     cin>>dim;
-    cout<< endl;
-    matrix_inicial(dim);
+    if(cin.fail()==1)
+    {
+        cout <<"ERRO FATAL!!!"<<endl;
+        return 0;
+                  
+     }
+    if(dim >0 && error==0)
+    {
+
+        cout<< endl;
+        matrix_inicial(dim);
         while(1)
         {
-            loop1:
-            cout << "INTRODUZA A SUA POSICAO"<<"(1-"<<dim*dim<<"):";
-            cin >> p;
-
-
-            if(jogador_j(dim, p)==0)
-            {
-                goto loop1;
-            }
-            t++;
-
-             if(vitorias(dim)==1)
-            {
-                v1.v.clear();
-                if(v1.v.empty())
-                {
-                     return 0;
-                }
+            
+               loop1:
+               cout << "INTRODUZA A SUA POSICAO"<<"(1-"<<dim*dim<<"):";
+               cin >> p;
                
-            }
-            if(t==dim*dim)
-            {
+                if(cin.fail()==1)
+                {
+                   cout <<"ERRO FATAL!!!"<<endl;
+                   error =1;
+                  
+                }
+                
+            
+            
+            
+
+            if(error==0)
+            {   
+                    if(jogador_j(dim, p)==0)
+                    {
+                
+                      goto loop1;
+                    }
+                     t++;
+
+                    if(vitorias(dim)==1)
+                    {
+                      end_m=1;
+               
+                     }
+                    if(t==dim*dim)
+                    {
                  
-                cout <<"FIM DE JOGO!!" <<endl;
-                v1.v.clear();
-                if(v1.v.empty())
-                {
-                     return 0;
-                }
+                     cout <<"FIM DE JOGO!!" <<endl;
+                     end_m=1;
                
-            }
-           pc_j(dim);
-           t++;
+                    }
+                    pc_j(dim);
+                    t++;
           
-            if(derrota(dim)==1)
-            {
+                    if(derrota(dim)==1)
+                    {
+                     end_m=1;
+               
+                     }
+                    if(t==dim*dim)
+                    {
+             
+                      cout <<"FIM DE JOGO!!" <<endl;
+                       end_m=1;
+               
+                    }
+            
+            }
+            
+            
+            
+           if(end_m==1)
+           {
                 v1.v.clear();
                 if(v1.v.empty())
                 {
                      return 0;
                 }
-               
-            }
-             if(t==dim*dim)
-           {
-             
-              cout <<"FIM DE JOGO!!" <<endl;
-               v1.v.clear();
-                if(v1.v.empty())
-                {
-                     return 0;
-                }
-               
            }
             
-           
-           
-            
-            
+            if(error==1)
+            {  
+                return 0;
+            }
         }
         
+    }
+
+    else
+    {
+        cout << "ERRO DE DIMENSAO!TENTE OUTRA VEZ!"<<endl;
+        goto loopd;
+    }
+      
     
 }
