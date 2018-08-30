@@ -132,7 +132,7 @@ void pc_j(int d)
 
 
 
-// verifica a vitoria na diagonal principal
+// verifica a vitoria/derrota na diagonal principal
 int dig_p1(int d,string mark)
 { 
     
@@ -167,7 +167,7 @@ int dig_p1(int d,string mark)
         return 0;
     }
 }
-//verifica a vitoria na outra diagonal
+//verifica a vitoria/derrota na outra diagonal
 int dig_e1(int d,string mark)
 { 
     
@@ -203,7 +203,7 @@ int dig_e1(int d,string mark)
         return 0;
     }
 }
-//vitoria nas linhas
+//vitoria/derrota nas linhas
 int linhas(int d, string mark)
 {
     int j=0,i=0,lit=0;
@@ -232,7 +232,7 @@ int linhas(int d, string mark)
         }
     }
 }
-//vitoria nas colunas
+//vitoria/derrota nas colunas
 int coluna(int d,string mark )
 {
     int colt=0, i=0,j=0;
