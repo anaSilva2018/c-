@@ -1,0 +1,4 @@
+[AMAT]ANALISE_MATEMATICA(8 ects):13.5 valores
+[PROG]PROGRAMACAO(6 ects):14.2 valores
+[TSIN]TEORIA_DO_SINAL(6 ects):12 valores
+[SINF]SISTEMAS_DE_INFORMACAO(6 ects):14.8 valores
