@@ -267,7 +267,7 @@ int derrota()
         }
         else if(mat2.table[0][0]==mat2.table[1][0] && mat2.table[1][0]==mat2.table[2][0])
         {
-            //cout << "THE END :(!"<<endl; 
+            cout << "THE END :(!"<<endl; 
             return 1;
         }
     }
