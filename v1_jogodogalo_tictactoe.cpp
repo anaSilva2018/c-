@@ -26,12 +26,12 @@ void iniciar_matrix()
         {
            
          mat2.table[n][m]="  ";
-        cout <<"|"<< mat2.table[n][m]<<"|";
+        std::cout <<"|"<< mat2.table[n][m]<<"|";
 
 
             if(m==2)
             {
-                cout <<endl;
+                std::cout <<std::endl;
                  
             }
         }
